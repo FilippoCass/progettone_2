@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)file:///Users/macbookpro/Desktop/Predicting%20Oscar%20Nominations.htm -->
+<html lang="it"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Predicting Oscar Nominations</title>
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="/Users/macbookpro/Desktop/Predicting Oscar Nominations_files/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/Users/macbookpro/Desktop/Predicting Oscar Nominations_files/css/mobile.css">
+		<link rel="stylesheet" href="/Users/macbookpro/Desktop/Predicting Oscar Nominations_files/css/font-awesome.min.css">
+		
+		<!-- Observable SCRIPT import -->
+		  <script type="module">
+
+        import { Inspector, Runtime } from "https://unpkg.com/@observablehq/notebook-runtime@1.0.1/dist/notebook-runtime.js?module";
+
+        import notebook from "https://api.observablehq.com/@fp10304/dvva-2019-alternative-word-cloud-cinema-soluzione.js";
+        
+        import notebook2 from "https://api.observablehq.com/@fp10304/actor-vs-actress-power.js";
+        
+        import notebook3 from "https://api.observablehq.com/@fp10304/2017-movie-graph.js";
+        
+
+        const renders = {
+
+            "bolle": "#bolle"
+            
+        };
+        
+        const renders2 = {
+
+            "barre": "#barre"
+            
+         };
+            
+        const renders3 = {
+
+            "grafo": "#grafo"
+            
+         };
+            
+        
+        
+
+        Runtime.load(notebook, (variable) => {
+
+            const selector = renders[variable.name];
+
+            if (selector) {
+
+                return new Inspector(document.querySelector(selector));
+
+            }
+            
+				 });
+			
+			Runtime.load(notebook2, (variable) => {
+
+            const selector2 = renders2[variable.name];
+
+            if (selector2) {
+
+                return new Inspector(document.querySelector(selector2));
+
+            }
+
+
+
+        });
+        
+        
+        Runtime.load(notebook3, (variable) => {
+
+            const selector3 = renders3[variable.name];
+
+            if (selector3) {
+
+                return new Inspector(document.querySelector(selector3));
+
+            }
+
+
+
+        });
+
+    		</script>
+
+    <!-- End of Observable SCRIPT import -->
+				
+			
+				
+			
+			
+					
+		
+	</head>
+	
+
+
+		
+	
+	<body>
+		<header>
+			<div class="topnav" id="myTopnav">
+  					<a href="#slide2" onclick="toggle()" class="">Cinema & Machine Learning</a>
+					<a href="#slide3" onclick="toggle()">Data, data everywhere</a>
+					<a href="#slide5" onclick="toggle()">Graphs & Networks</a>
+					<a href="#slide6" onclick="toggle()">Cinema & AI </a>
+					<a href="#slide7" onclick="toggle()">Credits</a>
+  <a href="javascript:void(0);" class="icon" onclick="toggle()">
+    <i class="fa fa-bars"></i>
+  </a>
+  
+  
+ 
+  
+</div>
+			
+	
+	
+			
+		</header>
+	
+		<section class="slide slide-title parallax" id="slide1">	
+			<h1 class="title"></h1>
+			
+		</section>
+
+	 	
+	 	<section class="slide text" id="slide2">
+			<h1 class="sectionTitle">
+				Cinema &amp; Machine Learning
+  
+  				<p class="uppercase"> 
+  				
+  				Può una macchina capire cosa rende di successo un film? </p>
+  				
+  				<p> Un’équipe di junior data scientist dell’Università di Pisa pensa di sì.
+  				
+  				Per capirlo, si sono rivolti all’evento cinematografico più antico al mondo: gli Oscar, 
+  				un premio che trae le sue origini il 16 maggio del 1929 quando Douglas Fairnbanks e Cecil deMille, 
+  				i due presentatori della prima edizione degli Oscar, sono nella Blossom Room del Roosevelt Hotel di Hollywood, 
+  				davanti a poco più di 250 invitati, 
+  				in una cerimonia in cui il premio come migliore attrice fu assegnato a Janet Gaynor. </p>
+
+<p class="immagine"><img src="/Users/macbookpro/Desktop/Predicting Oscar Nominations_files/Media/Janet-Gaynor.jpg"></p>
+  		       <p>Sono trascorsi 90 anni da allora e gli Oscar continuano a giocare un ruolo importante nell’immaginario collettivo. 
+Come dimenticare tutti i meme dedicati a Di Caprio 
+per la vittoria dell’Oscar come migliore attore per The revenant, dopo anni di sconfitte?</p>
+
+
+
+<p>
+
+La storia dell’Oscar è anche costellata da gesti o discorsi di critica politica: 
+pensiamo al rifiuto di Marlon Brando nel 1973 di ritirare la statuetta dopo 
+aver vinto il premio come migliore attore per il Padrino 
+e alla presentazione al suo posto di una donna vestita da nativo-americana per denunciare il trattamento riservato 
+agli indiani d’America nell’industria del cinema. 
+Oppure, alle parole pronunciate da Patricia Arquette nel 2015, attrice premiata come migliore 
+non protagonista per l’interpretazione di Olivia Evans, che ha ricordato al pubblico come 
+«le donne non hanno pari diritti negli Stati Uniti perché la Costituzione non è stata scritta pensando a loro». 
+<p class="immagine"><img src="/Users/macbookpro/Desktop/Predicting Oscar Nominations_files/Media/oscar_controversy.jpg"></p><p> Ma come funziona la candidatura agli Oscar? 
+Gli Academy Awards, meglio conosciuti come Oscar, sono assegnati ogni anno dall’Academy of Motions Picture Arts 
+and Science, 
+organizzazione che comprende 6000 iscritti tutti con diritto di voto, la cui identità non è resa nota. 
+Una prima selezione avviene con le nomination, in cui i membri dell’Academy possono votare solo 
+i film che appartengono alla categoria di cui fanno parte, vale a dire che i film candidati alla miglior regia 
+possono essere votati solo dai registi iscritti dell’Academy, 
+gli attori candidati dagli attori, le sceneggiature candidate dagli sceneggiatori e così via.</p><p>Nel corso degli ultimi anni, si sono sollevati intensi dibattiti sul funzionamento delle nomination: 
+ritroviamo un’inchiesta pubblicata dal Los Angeles Times che ha rivelato l’etnia, la composizione anagrafica e di 
+genere di oltre 5.100 iscritti all’Academy. 
+Sulla base di questo studio, è risultato che il giurato medio aveva un’età di 62 anni,
+ che il 77% era maschio e il 94% era di pelle bianca. 
+ All’interno di questa critica sollevata all’Academy, si posizione inoltre la campagna 
+ <a href="https://edition.cnn.com/2018/03/04/politics/oscars-so-white-april-reign/index.html" target="_blank"> 
+ #OscarSoWhite </a>, hashtag coniato nel 2015 da April Reigne, giornalista e attivista nel campo della diversità 
+ e dell’inclusione, per denunciare la mancanza di diversità etnica nelle nomination agli Oscar.</p>
+ <p class="immagine"><img src="/Users/macbookpro/Desktop/Predicting Oscar Nominations_files/Media/oscar_yellow.jpg"></p>
+ <p>Quali sono, dunque, i fattori che influiscono sulle nomination agli Oscar?  
+Quanto è importante la popolarità di un attore o del budget investito per candidarsi agli Oscar? </p>
+
+<p>Per rispondere a questi interrogativi, i ricercatori hanno usato tecniche di machine learning per 
+analizzare i meccanismi che si celano dietro le nomination agli Oscar 
+e capire cosa può sancire il successo di un’opera cinematografica. </p><p>La comprensione e il tentativo di predire la popolarità di un film «emerge fin dalla nascita del cinema americano», 
+afferma Simone Arcagni, curatore del blog
+
+<a href="https://simonearcagni.nova100.ilsole24ore.com/" target="_blank"> 
+ Post-Cinema </a> su Nòva,
+quando negli anni ’20 cominciarono a riunirsi a Los Angeles una serie di case di produzione cinematografiche 
+che diedero inizio all’attività promozionale dello star system. «Il sistema star system americano è costruito 
+come una campagna di marketing, a ogni star è assegnato un potenziale di bigliettamento». 
+L’investimento sugli attori era, in quel momento storico, il principale fattore che poteva 
+decretare il successo di un’opera. Oppure, rivolgendoci ancora alla storia del cinema, 
+pensiamo alla saga di Rambo o di Guerre Stellari, «in cui i produttori hanno individuato alcuni marchi di successo». </p><p>Ciò che cambia da questi tentativi, è «il lato ingegneristico» perché oggi possiamo analizzare, 
+attraverso il machine learning, un’enorme quantità di dati – un’«operazione di massificazione quantitativa» –
+dai quali costruire un modello predittivo in grado di misurare cosa rende di successo un’opera. </p>
+      
+		</section>	
+		
+		<section class="slide text" id="slide3">
+			<h1 class="sectionTitle">
+				Data, data everywhere
+				<p>
+				<p class="immagine"><img src="/Users/macbookpro/Desktop/Predicting Oscar Nominations_files/Media/imdb.jpg"> 			</p>
+				
+				<div class="fullwidth"	>		
+					
+					
+					<p> Le fonti principali che sono state utilizzate per raccogliere i dati sono IMDB, 
+					sito web che gestisce informazioni su film cinematografici, 
+					dal quale i ricercatori hanno estratto dati quali il nome degli attori, i registi, la casa di produzione e il 
+					budget investito, per un arco temporale che va dal 2006 al 2019 e il New York Times, dal quale 
+					hanno raccolto news dal 2004 al 2018. Altre sorgenti di dati sono state Open Subtitles, 
+					dal quale hanno estratto i sottotitoli dei film che sono stati candidati o no per le nomination e Rotten Tomatoes, 
+					sito web che aggrega le recensioni dei critici e del pubblico. </p>			
+				</div>	
+			</h1>
+			
+			
+			
+			<div class="divRight">
+			
+			
+			</div>
+			
+		</section>
+		<div class='viz' id="bolle"> 
+		
+		
+		</div>
+		
+		 
+		
+		<section class="slide text" id="slide5">
+			<h1 class="sectionTitle">
+				Graphs & Networks
+				
+				<p>Una ricerca pubblicata nel 2017 sul
+				
+				<a href="	https://onlinelibrary.wiley.com/doi/full/10.1111/bjop.12242" target="_blank"> 
+					British Journal of Psychology</a>		
+				 ipotizza che sia più probabile essere candidati agli Oscar se il film 
+				 ritrae la cultura americana. Niklas Steffens, autore principale dello studio, afferma 
+				 che «la nostra percezione è fortemente influenzata dai gruppi sociali di cui siamo membri 
+				 e che forniscono la base per dare un senso al mondo». 
+				 Saremmo, dunque, più propensi a identificarci in un film che rappresenta 
+			    la nostra appartenenza a un gruppo sociale, motivo per cui un film che porta tratti in cui i cittadini 
+			    statunitensi possono identificarsi ha molte possibilità di essere candidato alle nomination. </p><p> Gli junior data scientist, partendo da questa intuizione, hanno voluto verificare 
+se un fattore determinante per essere candidati alle nomination è la presenza 
+nel film di temi rilevanti negli USA. Per capirlo, 
+hanno realizzato un’analisi di complex network utilizzando le notizie estratte dal New York Times 
+e i dati dei film raccolti da Imdb. </p><p>Come si relazionano, dunque, i film candidati alle nomination con i temi più discussi negli USA in un determinato anno?</p><p>Secondo l’équipe, un film in nomination ha topic che sono strettamente correlati 
+con le notizie apparse sul New York Times, confermando l’ipotesi secondo cui un film 
+ha molte possibilità di essere candidato agli Oscar se porta in scena temi in cui i cittadini 
+statunitensi possono identificarsi. </p><p> Per fortificare questa deduzione, possiamo soffermarci sulle nomination del 2017, anno in cui 
+hanno ottenuto la nomination La La Land, Moonlight, e Manchester by the Sea. 
+
+<p class="immagine"><img src="/Users/macbookpro/Desktop/Predicting Oscar Nominations_files/Media/Moonlight.jpg"></p>
+
+<p>Se pensiamo che il 2016 si era concluso con le elezioni di Trump, che aveva fondato la sua campagna elettorale 
+sulla volontà di fortificare il muro tra Messico e Stati Uniti, e che nel 2017 aveva spesso criticato gli attori neri 
+o figure pubbliche ritraendoli come 
+<a href="https://www.politico.com/story/2017/11/22/trump-twitter-fight-black-athletes-258396" target="_blank"> 
+ingrati</a>, allora sembra perfettamente coerente che un film come Moonlight, ambientato in un ghetto nero di Miami, 
+abbia ricevuto 8 nomination. </p>
+
+<div class='viz' id="grafo"> </div>
+
+<p> Un secondo metodo usato dall’équipe si colloca in un ramo della data science chiamato text mining, 
+un’analisi che è in grado di estrarre informazioni rilevanti da testi non strutturati, 
+ciò che in informatica è chiamato linguaggio naturale, il nostro per intenderci. </p><p>Attraverso il Doc2vec, gli junior data scientist hanno utilizzato i sottotitoli dei film candidati e non candidati
+ alle nomination 
+per costruire una rete da cui analizzare la somiglianza tra i testi. 
+Dalla ricerca è emerso che c’è una serie di comunità molto grandi che raccolgono la maggior parte 
+dei film in nomination e una serie di comunità molto piccole in cui si collocano i film non candidati. 
+Questi ultimi rappresentano prevalentemente temi legati allo sport, come Creed, 
+o rivolti a un pubblico young adult, come Hunger Games e Twilight. 
+L’intuizione che ne emerge è che i film che trattano di sport, e in particolare di box, 
+o rivolti a un pubblico young adult sono meno favoriti alle nomination. </p><p>Quali sono i “sentimenti” prevalenti dei film candidati alle nomination? 
+È più probabile che si candidi un film con un linguaggio positivo, come una commedia, 
+o la cui modalità espressiva è negativa, come in un film drammatico? </p><p> Per rispondere a questa domanda, l’équipe ha usato il metodo SentiwordNet, 
+attraverso cui suddividere i film in positivi e negativi basandosi sui sottotitoli. 
+Attraverso la costruzione di un grafo, in cui erano collocati i sentimenti dei film come se fossero componenti 
+di un vettore, hanno constatato che i film si suddividevano in due comunità – una positiva e una negativa – 
+e che i film in nomination si distribuivano equamente tra queste due comunità. 
+La conclusione che emerge è che non si possono individuare differenze sostanziali di sentimento tra i film candidati 
+alle nomination. </p><p> Il terzo e ultimo tassello della ricerca aveva l’obiettivo di individuare le caratteristiche più rilevanti di un film 
+candidato alle nomination attraverso la classificazione, metodo utilizzato in data science 
+per costruire un modello predittivo. </p><p> La macchina riusciva a individuare quali film sarebbero stati candidati alle nomination 
+con una precisione molto elevata, dopo essere stata allenata con una grande quantità di dati estratti da Imdb, 
+Google Trends e Rotten Tomatoes. 
+Dai risultati, è emerso che il voto del pubblico, 
+il voto della critica, gli incassi delle sale cinematografiche e la popolarità dell’attore sono 
+fattori determinanti per la candidatura alle nomination. </p>
+
+
+ <a href="https://plot.ly/~PippoCass/8/?share_key=bbHfCpuTYAUDFOoddjEw54" target="_blank" title="Plot 8" style="display: block; text-align: center;">
+ <img src="https://plot.ly/~PippoCass/8.png?share_key=bbHfCpuTYAUDFOoddjEw54" alt="Plot 8" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    
+    <script data-plotly="PippoCass:8" sharekey-plotly="bbHfCpuTYAUDFOoddjEw54" src="https://plot.ly/embed.js" async></script>
+
+
+
+<p>Cosa rende, dunque, di successo un film?</p><p>Non sembra più sufficiente una campagna di marketing tradizionale, realizzata con un alto budget, 
+ma è necessario tenere conto di nuovi elementi, come le recensioni pubblicate sul sito di Rotten Tomatoes. 
+La macchina conferma e rende vincente l’ipotesi formulata da Ben Child, giornalista del Guardian, 
+secondo cui stiamo entrando
+
+<a href="https://www.theguardian.com/film/2015/sep/08/hollywood-rotten-tomatoes-jurassic-world-fantastic-four-terminator-genisys" target="_blank"> 
+  «nell’era di Rotten Tomatoes» </a>, 
+
+epoca che sta sostituendo quella dei blockbuster, avviata nel 1975 con Lo Squalo di Steven Spielberg.</p><p>Per decenni, il successo di un film era decretato da un’imponente campagna di promozione, 
+mentre ora è in atto una trasformazione in cui è il parere degli utenti a essere un fattore decisivo. 
+Le case cinematografiche dovrebbero, dunque, riuscire a suscitare una reazione positiva da parte degli utenti online 
+per creare un clima di attesa e far sì che gli utenti diventino spettatori. </p>			
+		<p>Un altro fattore decisivo per predire il successo di un film è la popolarità dell’attore, 
+		parametro che l’équipe è riuscita a identificare allenando la macchina con i dati estratti da Imdb e Google Trends.
+		I ricercatori hanno notato che a partire dal 2010, e con picchi molto elevati nel 2012, ricevevano la nomination
+		 film con attrici donne molto popolari. </p>
+		 
+		 <div class='viz' id="barre"> </div>
+		 
+		 <p>Il 2012 è un anno rilevante a livello sociale perché è l’anno in cui
+		  comincia ciò che è stata definita come la 
+		  
+		  <a href="https://en.wikipedia.org/wiki/Fourth-wave_feminism" target="_blank"> 
+			quarta ondata del femminismo</a>,
+		  
+		  fondata sulla critica al potere 
+		  dominante attraverso un’analisi intersezionale, ovvero un’analisi che tenta di comprendere come 
+		  l’oppressione delle donne ha luogo attraverso l’incrocio di tre fattori: genere, razza e classe. 
+		  L’assoggettamento di una donna bianca e benestante è diverso dai meccanismi di oppressione che
+		   si giocano su una donna nera o su una donna bianca e povera.</p>
+		   
+		    <p class="immagine"><img src="/Users/macbookpro/Desktop/Predicting Oscar Nominations_files/Media/4wave.jpg"></p><p>Sembrerebbe, dunque, che il femminismo influenzi fortemente 
+la rappresentazione delle donne nella produzione cinematografica. </p>	
+			
+				
+				
+			</h1>
+		</section>
+		
+		<section class="slide text" id="slide6">
+		<h1 class="sectionTitle">
+		Cinema & AI
+		
+		<p>Lo sviluppo tecnologico, grazie a cui possiamo chiedere a una macchina cosa rende di successo un film, 
+		si intreccia con la produzione di forme di narrazioni visive che raccontano come è cambiato il rapporto 
+		tra l’essere umano e la tecnologia. </p><p>Come evidenzia Simone Arcagni su
+
+<a href="https://www.che-fare.com/intelligenza-artificiale-cinema-arcagni/" target="_blank"> 
+			CheFare</a>,
+
+nella fantascienza classica il computer è il «portavoce di un sapere logico-matematico»,
+ riesce a «pensare all’interno – e solo all’interno – di un sistema di regole rigido e codificato (e formalizzato)».
+ È con Odissea nello Spazio di Stanley Kubrick che i confini tra organico e artificiale saranno smossi perché 
+ la macchina è in grado di provare interesse «per il morale dell’equipaggio fino alla “umana così umana” paura di morire».</p>
+
+<p>Ripercorrendo le tappe di queste nuove rappresentazioni, ritroviamo Blade Runner, in cui la nella macchina 
+emerge qualcosa che possiamo definire come “coscienza”, composta da ricordi e sentimenti umani, fino 
+a giungere ad Ex machina, in cui la macchina, divenuta una superintelligenza artificiale, riesce a manipolare l’umano. L’ultimo tassello di questo percorso evolutivo è rappresentato da Her, un’AI che è un servizio vocale 
+così sviluppato da suscitare la volontà di condividere con lei esperienze quotidiane, fino a giungere a un rapporto di amore.
+ </p>
+ <p class="immagine"><img src="/Users/macbookpro/Desktop/Predicting Oscar Nominations_files/Media/Her.gif"></p>
+ <p>Il cambiamento della rappresentazione della macchina è stato, dunque, determinato dalle innovazioni 
+nel campo dell’AI o è stato il cinema a ispirare i nuovi sviluppi tecnologici?</p><p>Secondo Simone Arcagni, in questo momento storico è l’arte e non più il cinema a svolgere un ruolo 
+fondamentale nello sviluppo tecnologico. Nuove forme espressive, come la new media art e la digital art, 
+cercano «di immaginare in quale mondo andremo ad abitare, attraverso un rapporto simbiotico con le nuove tecnologie». 
+Nel cinema, invece, non stiamo assistendo a questa ricerca di «nuove modalità di interazione con la tecnologia». </p><p>Chissà, dunque, se il cinema riuscirà a farsi contaminare dalle nuove tecnologie e ad essere ancora portavoce 
+degli «scambi simbolici che avvengono nella società». </p>
+		
+
+			</h1>
+		</section>
+		
+		
+		<section class="slide text" id="slide7">
+			<h1 class="sectionTitle">
+				Credits
+				
+				<p>Filippo Cassano, Guido Cei, Laura De Grazia, Simone Fabbrizzi, Lorenzo Lodi. Master Big Data 2019, Università di Pisa.</p>
+				
+			</h1>
+		</section>
+		
+		<script>
+function toggle() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else if (x.className === "topnav responsive")
+  	x.className= "topnav";
+  else{
+    x.className = "topnav";
+  }
+}
+
+</script>
+		
+	
+	
+	
+	
+	
+	
+	
+</body></html>
